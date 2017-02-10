@@ -1,6 +1,17 @@
-<h1>
+<!--<h1>
   {{title}}
-</h1>
+</h1>-->
 
-<p>Counter: {{counter}}</p>
-<button (click)="increment()">Increment</button>
+<div class="app-container">
+  <div class="board">
+    <div *ngFor="let cell of gameState.board; let i = index;" (click)="handleClick(i)" class="square">
+      {{cell}}
+    </div>
+  </div>
+  <div *ngIf="gameState.winner">
+    <h1>{{'The winner is ' + gameState.winner}}</h1>
+    <div>
+      <button (click)="handleReset()">Reset</button>
+    </div>
+  </div>
+</div>
