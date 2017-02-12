@@ -1,13 +1,3 @@
-// import { INCREMENT } from './actions';
-
-// export interface IAppState {
-//     counter: number;
-// }
-
-// export const INITIAL_STATE: IAppState = {
-//     counter: 0
-// };
-
 import { TAKE_TURN, RESET } from './actions';
 import { GameState } from './reducers/game';
 
@@ -36,14 +26,3 @@ export const INITIAL_STATE: RootState = {
     game: initialGameState
 };
 
-// export function rootReducer(state: RootState, action): RootState {
-//     switch (action.type) {
-//         // case INCREMENT:
-//         //     return { counter: state.counter + 1 };
-
-//         default:
-//             break;
-//     }
-
-//     return state;
-// }

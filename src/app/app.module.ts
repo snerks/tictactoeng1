@@ -5,7 +5,6 @@ import { HttpModule } from '@angular/http';
 import { NgRedux, NgReduxModule } from 'ng2-redux';
 
 import { AppComponent } from './app.component';
-// import { IAppState, rootReducer, INITIAL_STATE } from './store';
 import rootReducer from './reducers/rootReducer';
 import { RootState, INITIAL_STATE } from './store';
 

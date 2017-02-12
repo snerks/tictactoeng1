@@ -43,8 +43,6 @@ interface OtherAction extends ReduxAction<{}> {
 
 const defaultAction: OtherAction = { type: '' };
 
-// type GameAction = TakeTurnAction | OtherAction;
-
 const winningCombosIndices = [
     [0, 1, 2],
     [3, 4, 5],
@@ -104,12 +102,6 @@ export default function game(
                 board: newBoardState,
                 winner: state.winner
             };
-
-            // console.log('state');
-            // console.log(state);
-
-            // console.log('newState');
-            // console.log(newState);
 
             const index = ((action as TakeTurnAction).payload) !.index;
 

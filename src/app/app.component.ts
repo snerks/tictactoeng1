@@ -1,9 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NgRedux } from 'ng2-redux';
 
-// import { IAppState } from './store';
-// import { INCREMENT } from './actions';
-
 import { RootState } from './store';
 import { GameState } from './reducers/game';
 import { takeTurn, reset } from './actions/gameActions';
@@ -16,16 +13,10 @@ import { takeTurn, reset } from './actions/gameActions';
 export class AppComponent implements OnInit, OnDestroy {
   title = 'app works!';
 
-  // counter = 0;
   gameState: GameState;
   subscription;
 
   constructor(private ngRedux: NgRedux<RootState>) {
-    // this.subscription = (
-    //   ngRedux
-    //     .select<number>('counter')
-    //     .subscribe(newCounter => this.counter = newCounter)
-    // );
     this.subscription = (
       ngRedux
         .select<GameState>('game')
@@ -44,10 +35,6 @@ export class AppComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }
-
-  // increment() {
-  //   this.ngRedux.dispatch({ type: INCREMENT });
-  // }
 
   handleClick(index: number) {
     this.ngRedux.dispatch(takeTurn(index));
